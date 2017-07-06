@@ -1,0 +1,7 @@
+{
+    "port": 8000,
+    "token": "123456",
+    "hooks": {
+        "git": "pull.sh"
+    }
+}

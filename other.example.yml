@@ -1,0 +1,9 @@
+webhook:
+  image: xorilog/docker-webhook
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./www:/var/www/html/:rw
+    - ./webhook/scripts:/root/dockerpuller/scripts:rw
+    - ./webhook/config.json:/root/dockerpuller/config.json:ro
+
