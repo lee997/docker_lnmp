@@ -7,4 +7,5 @@ webhook:
     - ./webhook/scripts:/root/dockerpuller/scripts:rw
     - ./webhook/app.py:/root/dockerpuller/app.py:ro
     - ./webhook/config.json:/root/dockerpuller/config.json:ro
+    - /root/.ssh/id_rsa:/root/.ssh/id_rsa:ro
 
