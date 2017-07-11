@@ -7,6 +7,8 @@ FROM php:fpm
 # Update ubuntu
 RUN apt-get update
 
+RUN apt-get install -y libssl-dev
+
 # mcrypt
 RUN apt-get install -y libmcrypt-dev
 RUN docker-php-ext-install mcrypt
