@@ -8,6 +8,7 @@ FROM php:fpm
 RUN apt-get update
 
 RUN apt-get install -y libssl-dev
+RUN apt-get install -y libsqlite3-dev
 
 # mcrypt
 RUN apt-get install -y libmcrypt-dev
