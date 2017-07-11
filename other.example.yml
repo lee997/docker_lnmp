@@ -1,3 +1,8 @@
+memcached:
+  image: memcached:latest
+  ports:
+    - "11211:11211"
+
 webhook:
   image: xorilog/docker-webhook
   ports:

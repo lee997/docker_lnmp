@@ -7,7 +7,11 @@ import subprocess
 app = Flask(__name__)
 config = None
 
-@app.route("/", methods=['POST'])
+@app.route("/test")
+def test():
+    return jsonify(success=True), 200
+
+@app.route("/hook", methods=['POST'])
 def hook_listen():
     if request.method == 'POST':
         token = request.args.get('token')
@@ -16,7 +20,7 @@ def hook_listen():
             if hook:
                 hook_value = config['hooks'].get(hook)
                 if hook_value:
-                    subprocess.call(hook_value)
+                    subprocess.Popen(hook_value, shell=True)
                     return jsonify(success=True), 200
                 else:
                     return jsonify(success=False, error="Hook not found"), 404
@@ -31,4 +35,4 @@ def load_config():
 
 if __name__ == "__main__":
     config = load_config()
-    app.run(host=config.get('host', '0.0.0.0'), port=config.get('port', 8000))
+    app.run(debug=True, host=config.get('host', '0.0.0.0'), port=config.get('port', 8000))

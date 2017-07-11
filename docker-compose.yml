@@ -33,8 +33,3 @@ mysql:
     - ./logs/mysql/:/var/log/mysql/:rw
   environment:
     MYSQL_ROOT_PASSWORD: "123456"
-   
-memcached:
-  image: memcached:latest
-  ports:
-    - "11211:11211"
