@@ -5,4 +5,4 @@ RUN apt-get update \
     libmemcached-dev libmcrypt-dev ssh --no-install-recommends \
     && rm -r /var/lib/apt/lists/*
 RUN docker-php-ext-configure mbstring
-RUN docker-php-ext-install mbstring zip intl bcmath pdo_mysql mcrypt iconv
+RUN docker-php-ext-install mbstring zip intl bcmath pdo_mysql mcrypt iconv mysqli
