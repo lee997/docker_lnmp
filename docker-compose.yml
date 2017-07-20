@@ -23,7 +23,6 @@ php-fpm:
     - ./logs/php-fpm/:/var/log/php-fpm/:rw
   links:
     - mysql:mysql
-    - memcached:memcached
 
 mysql:
   restart: always
